@@ -1,0 +1,81 @@
+.mat-toolbar {
+  font-size: 1.5rem;
+  background: white;
+}
+
+.efectos {
+  transition: linear 0.2s;
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+
+  .iconos {
+    transition: linear 0.2s;
+    transform: translateY(0px);
+  }
+}
+
+.iconos {
+  height: 300px;
+  background-size: cover;
+  clip-path: circle();
+  margin: auto;
+}
+
+.efectos:hover {
+  filter: drop-shadow(0px 45px 15px rgba(50, 50, 0, 0.5));
+
+  .iconos {
+    transform: translateY(-30px);
+  }
+}
+
+.contaJornada {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35% 65%;
+  justify-items: center !important;
+
+  .texto {
+    margin-top: -2%;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 4.2em;
+  }
+
+  .jornada {
+    margin-top: -2%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+
+    p {
+      padding: 40px 0px;
+      font-size: 2.5em;
+      text-align: center;
+    }
+  }
+}
+
+.saludo,
+.nombres {
+  font-size: 25px !important;
+  margin-top: 6px;
+}
+
+.saludo {
+  font-weight: 550 !important;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.nombres {
+  font-weight: 300 !important;
+}
+
+.mat-icon {
+  font-size: 40px;
+  margin-top: -22px;
+  margin-right: 10px;
+}

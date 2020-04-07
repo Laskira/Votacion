@@ -1,0 +1,99 @@
+.mat-card-content,
+.mat-card-footer,
+.grafico {
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.refres {
+  position: fixed;
+  top: 11%;
+  right: 1.5%;
+  z-index: 150;
+}
+
+.grafico {
+  margin: 15px 0px 15px 0px;
+  height: 370px !important;
+}
+
+.mat-mini-fab {
+  background: rgba(170, 170, 170, 0.555);
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+  transform: scale(1.0); 
+}
+
+.mat-mini-fab:hover {
+  background: #00e676;
+  transform: scale(1.1);
+}
+
+.conta {
+  position: relative;
+  
+  h3 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+  }
+
+  .btn-prev,
+  .btn-next {
+    position: absolute;
+    top: 45%;
+  }
+  
+  .btn-next {
+    right: -2%;
+  }
+
+  .btn-prev {
+    left: -2%;
+  }
+
+}
+
+.graficos {
+  margin-top: 20px;
+  margin-bottom: 20px !important;
+}
+
+.contaHome {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+
+  .mat-card {
+    width: 70%;
+    height: 180px;
+    position: relative;
+
+    .mat-card-content {
+      height: 76%;
+      margin: auto !important;
+
+      p {
+        font-size: 4.3em;
+      }
+
+      span {
+        padding-left: 5px;
+        font-size: 3em;
+      }
+    }
+
+    .mat-card-footer {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+
+      .mat-card-title {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

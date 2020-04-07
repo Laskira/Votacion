@@ -1,0 +1,74 @@
+<div class="containerMain">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title>Registro de Candidato</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="FormularioCan" (ngSubmit)="Crear()">
+        <mat-form-field appearance="outline" class="textArea">
+          <mat-label>Nombre</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Nombre"
+            formControlName="NombreC"
+          />
+          <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Jornada</mat-label>
+          <mat-icon matSuffix>brightness_6</mat-icon>
+          <mat-select name="Jornada" formControlName="Jornada">
+            <mat-option *ngFor="let item of Jornada" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Tarjeton</mat-label>
+          <input
+            matInput
+            placeholder="Tarjeton"
+            formControlName="Tarjeton"
+          />
+          <mat-icon matSuffix>contacts</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field
+          hintLabel="Máximo 100 caracteres"
+          class="textArea"
+          appearance="outline"
+        >
+          <mat-label>Lema</mat-label>
+          <textarea
+            #input
+            maxlength="100"
+            matInput
+            placeholder="Lema"
+            formControlName="Lema"
+          ></textarea>
+          <mat-icon matSuffix>perm_contact_calendar</mat-icon>
+          <mat-hint align="end">{{ input.value?.length || 0 }}/100</mat-hint>
+        </mat-form-field>
+
+        <div class="form-group">
+          <app-file-upload
+            formControlName="Foto"
+            required
+            [progress]="progress"
+          ></app-file-upload>
+        </div>
+        <app-progress
+          [progress]="progress"
+          *ngIf="Progress == true"
+        ></app-progress>
+        <div class="btn">
+          <button mat-button color="primary" [disabled]="!FormularioCan.valid">
+            Registrar
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <mat-toolbar class="navbar">
+    <span>Administración</span>
+    <span class="spacer"></span>
+    <div class="user">
+      <img src="assets/user.svg" alt="" [matMenuTriggerFor]="appMenu" />
+      <p> {{ NombreP }} </p>
+    </div>
+  </mat-toolbar>
+
+  <aside class="aside">
+    <mat-list>
+      <mat-list-item class="home"
+        matRipple
+        [routerLink]="['/admin']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        
+        >
+        <mat-icon matSuffix>home</mat-icon>
+      
+        Inicio</mat-list-item
+      >
+    </mat-list>
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-icon matSuffix>person_add</mat-icon>
+         Registrar
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item
+            matRipple
+            *ngFor="let action of registrar"
+            [routerLink]="[action.Router]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+          <mat-icon> {{action.Icon}} </mat-icon>  
+          {{ action.Label }}
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-icon matSuffix>list</mat-icon>
+         Listar
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+        <mat-list>
+          <mat-list-item
+            matRipple
+            *ngFor="let action of listar"
+            [routerLink]="[action.Router]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+          <mat-icon> {{action.Icon}} </mat-icon>  
+            {{ action.Label }}
+          </mat-list-item>
+        </mat-list>
+      </ng-template>
+    </mat-expansion-panel>
+  </aside>
+
+  <main class="main" [@routerTransition]="getState(o)">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
+</div>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item (click)="token.logout()">Cerrar sesión</button>
+</mat-menu>

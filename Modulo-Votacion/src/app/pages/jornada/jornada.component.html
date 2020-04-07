@@ -1,0 +1,51 @@
+<app-spinner *ngIf="carga"></app-spinner>
+
+<div class="conta">
+  <mat-toolbar class="mat-elevation-z8">
+    <mat-icon>mood</mat-icon>
+    <p class="saludo">¡Hola!</p>
+    <p class="nombres">
+      {{ Persona.Nombres }} {{ Persona.P_Apellido }} {{ Persona.S_Apellido }}
+    </p>
+  </mat-toolbar>
+  <div class="contaJornada">
+    <div class="texto">
+      <p>Elija su Jornada</p>
+    </div>
+    <div class="jornada">
+      <div>
+        <span class="efectos">
+          <img
+            class="iconos"
+            src="assets/Diurna.svg"
+            alt=""
+            (click)="Votar('Diurna')"
+          />
+        </span>
+        <p>Diurna</p>
+      </div>
+      <div>
+        <span class="efectos">
+          <img
+            class="iconos mat-elevation-z8"
+            src="assets/Noturna.svg"
+            alt=""
+            (click)="Votar('Nocturna')"
+          />
+        </span>
+        <p>Nocturna</p>
+      </div>
+      <div>
+        <span class="efectos">
+          <img
+            class="iconos"
+            src="assets/Fin-de-semana.svg"
+            alt=""
+            (click)="Votar('fin-de-semana')"
+          />
+        </span>
+        <p>Fin de Semana</p>
+      </div>
+    </div>
+  </div>
+</div>

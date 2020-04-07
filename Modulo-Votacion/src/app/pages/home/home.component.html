@@ -1,0 +1,29 @@
+<app-spinner *ngIf="carga"></app-spinner>
+
+<div class="Container">
+  <mat-card class="mat-elevation-z20">
+    <div class="foto">
+      <img src="assets/user.svg" alt="" />
+    </div>
+    <mat-card-title>Elecciones 2020</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="CedulaForm" autocomplete="off" (ngSubmit)="buscar()">
+        <div class="form__group field">
+          <input
+            type="number"
+            class="form__field"
+            placeholder="Documento"
+            id="Documento"
+            [formControl]="myControl"
+            formControlName="Documento"
+          />
+          <label for="Documento" class="form__label">Ingrese su documento</label>
+
+          <button mat-mini-fab [disabled]="!CedulaForm.valid">
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

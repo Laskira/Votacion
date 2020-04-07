@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Sena's Votation 2020",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "clean": "rimraf dist/ uploads/",
+    "start": "npm run build && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "ADSI 2020",
+  "license": "ADSI 2020",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.2",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/fs-extra": "^8.1.0",
+    "@types/jsonwebtoken": "^8.3.7",
+    "@types/mongoose": "^5.7.1",
+    "@types/morgan": "^1.7.37",
+    "@types/multer": "^1.4.2",
+    "@types/node": "^13.7.4",
+    "@types/uuid": "^3.4.7",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  }
+}

@@ -1,0 +1,9 @@
+<div class="foto">
+  <input style="display: none;" type="file" #photoInput (click)="reset()"/>
+  <img
+    [src]="photoSelected"
+    class="img-fluid"
+    alt="No image"
+    (click)="photoInput.click()"
+  />
+</div>

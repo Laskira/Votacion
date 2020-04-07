@@ -1,0 +1,129 @@
+.mat-card {
+  width: 400px;
+  height: 250px;
+  padding: 0 !important;
+  display: grid;
+  grid-template-columns: 43% 1fr;
+  grid-gap: 10px;
+  position: relative;
+}
+
+.tarjeton,
+img {
+  position: absolute;
+  left: 0;
+  right: 40%;
+}
+
+.tarjeton {
+  background: rgba(177, 176, 176, 0.753);
+  border: 1px solid black;
+  width: 15%;
+  z-index: 10;
+  margin-left: 12%;
+  bottom: -2% !important;
+  padding: 8px 0px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+img {
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.Candidato {
+  position: absolute;
+  top: 2%;
+  bottom: 22%;
+  left: 44%;
+  right: 4%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.mat-card-title {
+  width: 220px;
+}
+
+.lema {
+  width: 220px;
+  display: block;
+  text-align: center;
+  word-wrap: break-word !important;
+}
+
+.btn {
+  position: absolute;
+  left: 44%;
+  right: 4%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  top: 77%;
+  bottom: 5%;
+
+  .mat-button {
+    width: 100%;
+  }
+}
+
+.mat-toolbar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  background: white;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  min-height: 80vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-gap: 30px;
+  justify-content: center !important;
+  align-content: center !important;
+}
+
+.mat-raised-button {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+
+  .mat-icon {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 60px;
+    font-size: 3em;
+  }
+}
+
+.mat-card-title {
+  text-align: center;
+  line-height: 26px;
+}
+
+.Diurna {
+  background: #7cb142;
+}
+
+.Nocturna {
+  background: #3d3364;
+  color: white;
+}
+
+.Fin-de-Semana {
+  background: #ffef76;
+}

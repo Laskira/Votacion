@@ -1,0 +1,128 @@
+$primary: #00e676;
+$secondary: #00e99b;
+$white: #fff;
+$gray: #9b9b9b;
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin: auto;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+.form__field {
+  width: 100%;
+  border: 0;
+  border: 2px solid $gray;
+  border-radius: 30px;
+  outline: 0;
+  font-size: 1.5rem;
+  padding: 7px 0;
+  height: 40px;
+  background: transparent;
+  transition: border-color 0.4s;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.8rem;
+    cursor: text;
+    top: 25px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: grid;
+  padding: 0px 10px;
+  padding-top: 8px;
+  grid-template-columns: 300px;
+  justify-content: center;
+  background: white;
+  display: block;
+  margin-left: 16%;
+  transition: 0.3s;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: $gray;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    margin-left: 25%;
+    display: block;
+    transition: 0.3s;
+    font-size: 1.3rem;
+    color: $primary;
+  }
+  padding-bottom: 6px;
+  border-radius: 30px;
+  border: 3px solid $primary;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.mat-mini-fab {
+  background: $primary;
+  position: absolute;
+  top: 32%;
+  right: 0;
+}
+
+.mat-mini-fab:hover,
+.mat-mini-fab:active {
+  background: $secondary;
+}
+
+img {
+  height: 300px;
+}
+
+.mat-card {
+  position: relative;
+  width: 450px;
+
+  .foto {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 180px;
+      margin: 0;
+      padding: 0;
+      margin-top: -90px;
+    }
+  }
+}
+
+.mat-card-title {
+  padding: 60px 0px 50px 0px;
+  font-size: 3rem;
+  font-weight: 400 !important;
+}
+
+.Container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.mat-form-field {
+  width: 100%;
+}

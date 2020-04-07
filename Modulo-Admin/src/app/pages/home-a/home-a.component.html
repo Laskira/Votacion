@@ -1,0 +1,88 @@
+<button mat-mini-fab class="refres" (click)="DatosCargar()" *ngIf="!carga">
+  <mat-icon>autorenew</mat-icon>
+</button>
+
+<ng-container *ngIf="carga; else datos">
+  <app-spinner></app-spinner>
+</ng-container>
+
+<ng-template #datos>
+  <mat-card class="graficos mat-elevation-z8">
+    <div class="conta" *carousel="let url; from: images; let ctrl = controller">
+      <h3>Los Votos de {{ url.Jornada }} son {{ url.cont }}</h3>
+      <button mat-mini-fab class="btn-prev" (click)="ctrl.prev()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-mini-fab class="btn-next" (click)="ctrl.next()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+
+      <div class="grafico" *ngIf="url.item === '0'">
+        <ngx-charts-bar-vertical
+          scheme="picnic"
+          [legendTitle]="'Candidatos de ' + url.Jornada"
+          [results]="Diurna"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+      <div class="grafico" *ngIf="url.item === '1'">
+        <ngx-charts-bar-vertical
+          scheme="picnic"
+          [legendTitle]="'Candidatos de ' + url.Jornada"
+          [results]="Nocturna"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+      <div class="grafico" *ngIf="url.item === '2'">
+        <ngx-charts-bar-vertical
+          scheme="picnic"
+          [legendTitle]="'Candidatos de ' + url.Jornada"
+          [results]="FinDeSemana"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="contaHome">
+    <mat-card class="mat-elevation-z8">
+      <mat-card-content>
+        <p [countUp]="Personas">
+          0
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-title>Personas</mat-card-title>
+      </mat-card-footer>
+    </mat-card>
+
+    <mat-card class="mat-elevation-z8">
+      <mat-card-content>
+        <p [countUp]="Votos">
+          0
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-title>Votos</mat-card-title>
+      </mat-card-footer>
+    </mat-card>
+
+    <mat-card class="mat-elevation-z8">
+      <mat-card-content>
+        <p [countUp]="Porcentaje" [options]="options">
+          0
+        </p>
+        <span>%</span>
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-card-title>Porcentaje votos</mat-card-title>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</ng-template>

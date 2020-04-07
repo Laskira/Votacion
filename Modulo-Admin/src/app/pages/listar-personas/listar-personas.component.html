@@ -1,0 +1,55 @@
+<div class="containerMain">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title>Lista de Aprendices</mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Buscar Aprendices</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <table mat-table [dataSource]="dataSource">
+        <ng-container
+          *ngFor="let item of columns"
+          [matColumnDef]="item.columnDef"
+        >
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            [ngClass]="{ Acciones: item.columnDef == 'Acciones' }"
+          >
+            {{ item.header }}
+          </th>
+          <td
+            [@rowsAnimation]=""
+            mat-cell
+            *matCellDef="let row"
+            [ngClass]="{ Acciones: item.columnDef == 'Acciones' }"
+          >
+            <ng-container *ngIf="item.columnDef == 'Acciones'; else otra">
+              <div class="icons">
+                <button
+                  mat-icon-button
+                  class="delete"
+                  (click)="acciones('2', row)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </ng-container>
+            <ng-template #otra>
+              {{ item.cell(row) }}
+            </ng-template>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <app-spinner *ngIf="carga"></app-spinner>
+      <div *ngIf="noData" class="noData">No hay Datos</div>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
